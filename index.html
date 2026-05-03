@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>交互式室内设计体验</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>交互式室内设计网站</h1>
+    <p>实时切换风格、颜色、布局与材质，快速预览你的理想空间。</p>
+  </header>
+
+  <main class="app">
+    <section class="controls" aria-label="设计控制面板">
+      <h2>控制面板</h2>
+
+      <label for="style">设计风格</label>
+      <select id="style">
+        <option value="modern">现代简约</option>
+        <option value="scandinavian">北欧</option>
+        <option value="industrial">工业风</option>
+        <option value="japandi">日式侘寂</option>
+      </select>
+
+      <label for="wallColor">墙面颜色</label>
+      <input id="wallColor" type="color" value="#f2efe9" />
+
+      <label for="floorMaterial">地板材质</label>
+      <select id="floorMaterial">
+        <option value="wood">木地板</option>
+        <option value="tile">瓷砖</option>
+        <option value="stone">石材</option>
+      </select>
+
+      <label for="lightness">灯光亮度</label>
+      <input id="lightness" type="range" min="45" max="100" value="78" />
+
+      <label for="layout">布局方案</label>
+      <select id="layout">
+        <option value="living">客厅</option>
+        <option value="bedroom">卧室</option>
+        <option value="studio">一体化空间</option>
+      </select>
+
+      <button id="randomize" type="button">随机生成方案</button>
+      <button id="reset" type="button" class="secondary">恢复默认</button>
+    </section>
+
+    <section class="preview-wrap" aria-label="室内预览">
+      <div id="preview" class="preview modern living">
+        <div class="ceiling-light"></div>
+        <div class="back-wall"></div>
+        <div class="floor"></div>
+        <div class="window"></div>
+        <div class="sofa furniture"></div>
+        <div class="table furniture"></div>
+        <div class="bed furniture"></div>
+        <div class="desk furniture"></div>
+        <div class="status" id="statusText">风格：现代简约 ｜ 布局：客厅</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
